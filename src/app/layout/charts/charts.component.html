@@ -1,8 +1,5 @@
 <div [@routerTransition]>
-    <app-page-header
-        [heading]="'Charts'"
-        [icon]="'fa-bar-chart-o'"
-    ></app-page-header>
+    <app-page-header [heading]=""></app-page-header>
     <div class="row">
         <div class="col col-sm-6">
             <div class="card mb-3">
@@ -10,19 +7,12 @@
                     Indicadores Climáticos
                 </div>
                 <div class="card-body">
-                    <canvas
-                        baseChart
-                        [datasets]="barChartData"
-                        [labels]="barChartLabels"
-                        [options]="barChartOptions"
-                        [legend]="barChartLegend"
-                        [chartType]="barChartType"
-                        (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)"
-                    >
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                        [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)">
                     </canvas>
                 </div>
-                
+
             </div>
         </div>
 
@@ -32,22 +22,27 @@
                     Risco de Incêndio
                 </div>
                 <div class="card-body">
-                    <canvas
-                        baseChart
-                        height="130"
-                        [datasets]="lineChartData"
-                        [labels]="lineChartLabels"
-                        [options]="lineChartOptions"
-                        [colors]="lineChartColors"
-                        [legend]="lineChartLegend"
-                        [chartType]="lineChartType"
-                        (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)"
-                    >
+                    <canvas baseChart height="130" [datasets]="lineChartData" [labels]="lineChartLabels"
+                        [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+                        [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)">
                     </canvas>
                 </div>
             </div>
-            
         </div>
+
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Legenda
+                </div>
+                <div class="card-body">
+                    <img src="../../../assets/images/Tabela.png" alt="Minha Figura" width="450" height="150">
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
 </div>
