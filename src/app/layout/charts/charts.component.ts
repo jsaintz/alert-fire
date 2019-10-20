@@ -13,6 +13,7 @@ import { ApiNasaService } from "../charts/charts.service";
 export class ChartsComponent implements OnInit {
     lat: number = -23.8779431;
     lng: number = -49.8046873;
+    zom: number = 15;
 
     // bar chart
     public barChartOptions: any = {

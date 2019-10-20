@@ -65,7 +65,12 @@
                     Mapa
                 </div>
                 <div class="card-body">
-                    <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
+                    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+                        <agm-marker
+                            [latitude]="lat"
+                            [longitude]="lng"
+                        ></agm-marker>
+                    </agm-map>
                 </div>
             </div>
         </div>
