@@ -4,7 +4,6 @@
     #map {
         height: 100%;
     }
-
     /* Optional: Makes the sample page fill the window. */
     html,
     body {
@@ -13,7 +12,6 @@
         padding: 0;
     }
 </style>
-
 <div [@routerTransition]>
     <app-page-header [heading]=""></app-page-header>
     <div class="row">
@@ -23,12 +21,18 @@
                     Indicadores Climáticos
                 </div>
                 <div class="card-body">
-                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
-                        [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)">
+                    <canvas
+                        baseChart
+                        [datasets]="barChartData"
+                        [labels]="barChartLabels"
+                        [options]="barChartOptions"
+                        [legend]="barChartLegend"
+                        [chartType]="barChartType"
+                        (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"
+                    >
                     </canvas>
                 </div>
-
             </div>
         </div>
 
@@ -38,10 +42,18 @@
                     Risco de Incêndio
                 </div>
                 <div class="card-body">
-                    <canvas baseChart height="130" [datasets]="lineChartData" [labels]="lineChartLabels"
-                        [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
-                        [chartType]="lineChartType" (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)">
+                    <canvas
+                        baseChart
+                        height="130"
+                        [datasets]="lineChartData"
+                        [labels]="lineChartLabels"
+                        [options]="lineChartOptions"
+                        [colors]="lineChartColors"
+                        [legend]="lineChartLegend"
+                        [chartType]="lineChartType"
+                        (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"
+                    >
                     </canvas>
                 </div>
             </div>
@@ -53,7 +65,7 @@
                     Mapa
                 </div>
                 <div class="card-body">
-                    <div id="map"></div>
+                    <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
                 </div>
             </div>
         </div>
@@ -64,25 +76,13 @@
                     Legenda
                 </div>
                 <div class="card-body">
-                    <img src="../../../assets/images/Tabela.png" width="450" height="150">
+                    <img
+                        src="../../../assets/images/Tabela.png"
+                        width="450"
+                        height="150"
+                    />
                 </div>
             </div>
         </div>
-
-        <script>
-            function initMap() {
-                // The location of Uluru
-                var uluru = { lat: -25.344, lng: 131.036 };
-                // The map, centered at Uluru
-                var map = new google.maps.Map(
-                    document.getElementById('map'), { zoom: 4, center: uluru });
-                // The marker, positioned at Uluru
-                var marker = new google.maps.Marker({ position: uluru, map: map });
-            }
-        </script>
-
-        <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJd_a7VRzBcqrs792SX1dEbfhQlVp9Sdw&callback=initMap"
-            async defer></script>
     </div>
 </div>
