@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 
+//Service
+import { ApiNasaService } from '../charts/charts.service';
+
 @Component({
     selector: 'app-charts',
     templateUrl: './charts.component.html',
@@ -158,7 +161,9 @@ export class ChartsComponent implements OnInit {
          */
     }
 
-    constructor() {}
+    events;
+
+    constructor(private apiService: ApiNasaService) { }
 
     ngOnInit() {
         this.barChartType = 'bar';
@@ -170,5 +175,12 @@ export class ChartsComponent implements OnInit {
         this.polarAreaChartType = 'polarArea';
         this.lineChartLegend = true;
         this.lineChartType = 'line';
+
+
+        //Chamada Service
+        this.apiService.getEvents().subscribe((data)=>{
+            console.log(data);
+            this.events = data['events'];
+          });
     }
 }
