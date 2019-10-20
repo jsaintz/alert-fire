@@ -11,9 +11,9 @@ import { ApiNasaService } from "../charts/charts.service";
     animations: [routerTransition()]
 })
 export class ChartsComponent implements OnInit {
-    lat: number = -23.8779431;
-    lng: number = -49.8046873;
-    zom: number = 15;
+    lat: number = 38.104;
+    lng: number = -113.158;
+    zoom: number = 15;
 
     // bar chart
     public barChartOptions: any = {
