@@ -2,11 +2,13 @@
     <div class="row justify-content-md-center">
         <div class="col-md-4">
             <img
-                src="assets/images/logo.png"
-                width="150px"
+                src="../../assets/images/alertfire.png"
+                width="70px"
+                height="70px"
+                style="border-radius: 5px 5px 5px 5px"
                 class="user-avatar"
             />
-            <h1>Seja Bem Vindo</h1>
+            <h1>Welcome</h1>
             <form role="form">
                 <div class="form-content">
                     <div class="form-group">
@@ -24,7 +26,7 @@
                             type="password"
                             class="form-control input-underline input-lg"
                             id=""
-                            placeholder="{{ 'Senha' | translate }}"
+                            placeholder="{{ 'Password' | translate }}"
                         />
                     </div>
                 </div>
@@ -36,7 +38,7 @@
                 >
                 &nbsp;
                 <a class="btn rounded-btn" [routerLink]="['/signup']">{{
-                    "Cadastrar" | translate
+                    "Sign up" | translate
                 }}</a>
             </form>
         </div>

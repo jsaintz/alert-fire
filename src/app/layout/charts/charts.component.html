@@ -1,3 +1,19 @@
+<style>
+    /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+    #map {
+        height: 100%;
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
 <div [@routerTransition]>
     <app-page-header [heading]=""></app-page-header>
     <div class="row">
@@ -34,15 +50,39 @@
         <div class="col col-sm-6">
             <div class="card mb-3">
                 <div class="card-header">
-                    Legenda
+                    Mapa
                 </div>
                 <div class="card-body">
-                    <img src="../../../assets/images/Tabela.png" alt="Minha Figura" width="450" height="150">
+                    <div id="map"></div>
                 </div>
             </div>
         </div>
 
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Legenda
+                </div>
+                <div class="card-body">
+                    <img src="../../../assets/images/Tabela.png" width="450" height="150">
+                </div>
+            </div>
+        </div>
 
+        <script>
+            function initMap() {
+                // The location of Uluru
+                var uluru = { lat: -25.344, lng: 131.036 };
+                // The map, centered at Uluru
+                var map = new google.maps.Map(
+                    document.getElementById('map'), { zoom: 4, center: uluru });
+                // The marker, positioned at Uluru
+                var marker = new google.maps.Marker({ position: uluru, map: map });
+            }
+        </script>
 
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJd_a7VRzBcqrs792SX1dEbfhQlVp9Sdw&callback=initMap"
+            async defer></script>
     </div>
 </div>

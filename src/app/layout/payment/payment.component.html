@@ -2,29 +2,39 @@
     <div class="col col-sm-4">
         <div class="card mb-3">
             <div class="card-header">
-                Premium
+                <p class="text-center">Premium</p>
             </div>
             <div class="card-body">
-                <h2>Quero proteger meu plantio por 1 mês</h2>
+                <p class="text-center">1 mês</p>
+                <p class="text-center" aria-hidden="true">Quero proteger meu plantio por 1 mês</p>
+                <button (click)="pay(5)" class="btn btn-success btn-block">$ 5,00</button>
             </div>
         </div>
     </div>
 
     <div class="col col-sm-4">
-        <div class="card mb-3">
-            <div class="card-header">
-                Premium
+            <div class="card mb-3">
+                <div class="card-header">
+                    <p class="text-center">Premium</p>
+                </div>
+                <div class="card-body">
+                    <p class="text-center">3 mês</p>
+                    <p class="text-center" aria-hidden="true">Quero proteger meu plantio por 3 meses</p>
+                    <button (click)="pay(10)" class="btn btn-success btn-block">$ 10,00</button>
+                </div>
             </div>
-            <div class="card-body"></div>
         </div>
-    </div>
 
-    <div class="col col-sm-4">
-        <div class="card mb-3">
-            <div class="card-header">
-                Premium
+        <div class="col col-sm-4">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <p class="text-center">Premium</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-center">12 mês</p>
+                        <p class="text-center" aria-hidden="true">Quero proteger meu plantio por 12 meses</p>
+                        <button (click)="pay(50)" class="btn btn-success btn-block">$ 50,00</button>
+                    </div>
+                </div>
             </div>
-            <div class="card-body"></div>
-        </div>
-    </div>
 </div>
