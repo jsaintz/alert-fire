@@ -4,6 +4,7 @@
     #map {
         height: 100%;
     }
+
     /* Optional: Makes the sample page fill the window. */
     html,
     body {
@@ -21,16 +22,9 @@
                     Indicadores Climáticos
                 </div>
                 <div class="card-body">
-                    <canvas
-                        baseChart
-                        [datasets]="barChartData"
-                        [labels]="barChartLabels"
-                        [options]="barChartOptions"
-                        [legend]="barChartLegend"
-                        [chartType]="barChartType"
-                        (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)"
-                    >
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                        [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)">
                     </canvas>
                 </div>
             </div>
@@ -42,22 +36,51 @@
                     Risco de Incêndio
                 </div>
                 <div class="card-body">
-                    <canvas
-                        baseChart
-                        height="130"
-                        [datasets]="lineChartData"
-                        [labels]="lineChartLabels"
-                        [options]="lineChartOptions"
-                        [colors]="lineChartColors"
-                        [legend]="lineChartLegend"
-                        [chartType]="lineChartType"
-                        (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)"
-                    >
+                    <canvas baseChart height="130" [datasets]="lineChartData" [labels]="lineChartLabels"
+                        [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+                        [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)">
                     </canvas>
                 </div>
             </div>
         </div>
+
+        <div class="col col-sm-6">
+            <table class="table">
+                <caption>Legenda</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Codições Regulares</th>
+                        <th scope="col">Estatística</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="bg-warning text-white">
+                        <th scope="row">1</th>
+                        <td>TS (Tempo Seco)</td>
+                        <td>Abaixo de 20</td>
+                    </tr>
+                    <tr class="bg-danger text-white">
+                        <th scope="row">2</th>
+                        <td>TE (Temperatura Elevada)</td>
+                        <td>Acima de 30</td>
+                    </tr>
+                    <tr class="bg-info text-white">
+                        <th scope="row">3</th>
+                        <td>Vento (V)</td>
+                        <td>13 - 20 Km/h</td>
+                    </tr>
+                    <tr class="bg-primary text-white">
+                        <th scope="row">4</th>
+                        <td>C (Chuva)</td>
+                        <td>200 m</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
 
         <div class="col col-sm-6">
             <div class="card mb-3">
@@ -66,28 +89,14 @@
                 </div>
                 <div class="card-body">
                     <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-                        <agm-marker
-                            [latitude]="lat"
-                            [longitude]="lng"
-                        ></agm-marker>
+                        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
                     </agm-map>
                 </div>
             </div>
         </div>
 
-        <div class="col col-sm-6">
-            <div class="card mb-3">
-                <div class="card-header">
-                    Legenda
-                </div>
-                <div class="card-body">
-                    <img
-                        src="../../../assets/images/Tabela.png"
-                        width="450"
-                        height="150"
-                    />
-                </div>
-            </div>
-        </div>
+
     </div>
+
+
 </div>

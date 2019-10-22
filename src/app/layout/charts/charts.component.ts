@@ -11,9 +11,9 @@ import { ApiNasaService } from "../charts/charts.service";
     animations: [routerTransition()]
 })
 export class ChartsComponent implements OnInit {
-    lat: number = -23.8779431;
-    lng: number = -49.8046873;
-    zom: number = 15;
+    lat: number = 40.896999999999998;
+    lng: number = -116.09699999999999;
+    zoom: number = 6;
 
     // bar chart
     public barChartOptions: any = {
@@ -25,8 +25,8 @@ export class ChartsComponent implements OnInit {
     public barChartLegend: boolean;
 
     public barChartData: any[] = [
-        { data: [65, 59, 80, 81, 56, 55, 40], label: "Hoje" },
-        { data: [28, 48, 40, 19, 86, 27, 90], label: "Incendio DD/MM/AA" }
+        { data: [65, 59, 80, 81, 56, 55, 40], label: "Incendio DD/MM/AA" },
+        { data: [28, 48, 40, 19, 86, 27, 90], label: "Hoje" }
     ];
 
     // Doughnut
